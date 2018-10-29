@@ -39,6 +39,8 @@ void		ip_shift(uint32_t *stats, uint32_t pos) {
 uint32_t	*ip_new(uint32_t ip, uint32_t *stats) {
 	uint32_t	i, n;
 
+	if (*stats >= STATS_MAX_IP)
+		return (NULL);
 	n = ++stats[0];
 	n = ((n - 1) * 2) + 1;
 	i = 1;
@@ -63,6 +65,8 @@ void	process_data(char *buffer, uint32_t *stats) {
 	cur = ip_search(ip, stats);
 	if (cur == NULL)
 		cur = ip_new(ip, stats);
+	if (cur == NULL)
+		return ;
 	++cur[1];
 	msync(stats, STATS_SIZE, MS_SYNC);
 }

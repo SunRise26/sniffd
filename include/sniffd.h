@@ -14,7 +14,7 @@
 
 # define STATS_IPREC_SIZE	8
 # define STATS_MAX_IP		1000
-# define STATS_SIZE			(STATS_IPREC_SIZE * STATS_MAX_IP)
+# define STATS_SIZE			(STATS_IPREC_SIZE * STATS_MAX_IP + 4)
 
 # define OP_START			1
 # define OP_STOP			2

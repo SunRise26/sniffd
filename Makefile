@@ -6,7 +6,7 @@ SRC_DIR = src/
 
 INC_DIR = include/
 
-SRC = main.c sniffer.c
+SRC = main.c sniffer.c op_func.c
 
 OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 
